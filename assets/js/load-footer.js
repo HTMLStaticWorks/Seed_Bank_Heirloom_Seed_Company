@@ -4,9 +4,7 @@ document.addEventListener('DOMContentLoaded', function() {
         <div class="container">
             <div class="row g-5">
                 <div class="col-lg-3 col-md-6 footer-widget">
-                    <a class="navbar-brand mb-4 d-inline-block fs-3 fw-bold" style="color: var(--heading-color);" href="index.html">
-                        <i class="fa-solid fa-seedling text-accent"></i> Seed Vault
-                    </a>
+                    <brand-logo location="footer"></brand-logo>
                     <p>Dedicated to preserving agricultural biodiversity through high-quality heirloom seeds.</p>
                     <div class="social-icons d-flex gap-3 mt-4">
                         <a href="#" style="color: var(--text);"><i class="fa-brands fa-facebook-f fs-5"></i></a>

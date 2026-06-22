@@ -566,6 +566,8 @@ main {
   display: flex !important;
   flex-direction: column !important;
   height: 100% !important;
+  background-color: var(--card-bg) !important;
+  color: var(--text-primary) !important;
 }
 .card-body {
   display: flex !important;
@@ -615,14 +617,7 @@ main {
 /* 6. Footer Responsive Stack */
 @media (max-width: 767px) {
   .footer-widget {
-    text-align: center !important;
     margin-bottom: 30px;
-  }
-  .footer-widget .social-icons {
-    justify-content: center;
-  }
-  .footer-widget .d-flex {
-    align-items: center;
   }
 }/* Header Mobile Toggles & Menu */
 @media (max-width: 991px) {
