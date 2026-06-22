@@ -1,1 +1,428 @@
-Seed_Bank_Heirloom_Seed_Company
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seed Vault | Premium Heirloom Seeds</title>
+    <meta name="description"
+        content="Seed Vault specializes in selling non-GMO heirloom seeds, rare heritage varieties, and seed preservation collections.">
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <style>
+        /* Specific Home 1 Styles */
+        .hero-section {
+            min-height: calc(100vh - 76px);
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(135deg, var(--bg-secondary) 0%, var(--bg-primary) 100%);
+        }
+
+        .parallax-section {
+            background-image: url('https://images.unsplash.com/photo-1592424005820-1e5b2210b427?q=80&w=1920&auto=format&fit=crop');
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            position: relative;
+            color: #fff;
+        }
+
+        .parallax-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.6);
+        }
+
+        .timeline-item {
+            border-left: 3px solid var(--accent-color);
+            padding-left: 30px;
+            position: relative;
+            margin-bottom: 40px;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -11px;
+            top: 0;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: var(--gold-accent);
+            border: 4px solid var(--bg-primary);
+        }
+
+        .stagger-card {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .stagger-card.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .delay-1 {
+            transition-delay: 0.1s;
+        }
+
+        .delay-2 {
+            transition-delay: 0.2s;
+        }
+
+        .delay-3 {
+            transition-delay: 0.3s;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar navbar-expand-lg">
+            <div class="container">
+                <brand-logo location="header"></brand-logo>
+
+                <div class="header-controls d-lg-none">
+                    <button class="icon-btn" id="theme-toggle-mobile" aria-label="Toggle Theme">
+                        <i class="fa-solid fa-moon"></i>
+                    </button>
+                    <button class="navbar-toggler" type="button" aria-label="Toggle navigation">
+                        <i class="fa-solid fa-bars fs-3" style="color: var(--text-primary);"></i>
+                    </button>
+                </div>
+
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav mx-auto">
+                        <li class="nav-item"><a class="nav-link active" href="index.html">Home 1</a></li>
+                        <li class="nav-item"><a class="nav-link" href="home-2.html">Home 2</a></li>
+                        <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                        <li class="nav-item"><a class="nav-link" href="services.html">Seeds</a></li>
+                        <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+                        <li class="nav-item"><a class="nav-link" href="pricing.html">Pricing</a></li>
+
+                        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                    </ul>
+
+                    <div class="header-controls d-none d-lg-flex">
+                        <button class="icon-btn" id="theme-toggle" aria-label="Toggle Theme">
+                            <i class="fa-solid fa-moon"></i>
+                        </button>
+                        <button class="icon-btn" id="rtl-toggle" aria-label="Toggle RTL">
+                            <i class="fa-solid fa-language"></i>
+                        </button>
+                        <a href="login.html" class="btn-primary" style="padding: 8px 20px;">Login</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Section 1: Hero -->
+        <section class="hero-section">
+            <div class="floating-particle" style="top: 20%; left: 10%;"><i
+                    class="fa-solid fa-seedling text-gold fs-1"></i></div>
+            <div class="floating-particle" style="top: 60%; right: 15%; animation-delay: 2s;"><i
+                    class="fa-solid fa-leaf text-success fs-2"></i></div>
+            <div class="floating-particle" style="top: 30%; right: 40%; animation-delay: 1s;"><i
+                    class="fa-brands fa-envira text-success fs-3"></i></div>
+
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-6 reveal" data-anim="slide-left">
+                        <h1 class="display-3 fw-bold mb-4 hero-title">Preserving the Past, Planting the Future</h1>
+                        <p class="lead mb-5">Discover our premium collection of non-GMO heirloom seeds and rare heritage
+                            varieties for your garden or farm.</p>
+                        <div class="d-flex gap-3 flex-wrap">
+                            <a href="services.html" class="btn-primary">Explore Seeds</a>
+                            <a href="about.html" class="btn-outline">Our Mission</a>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 mt-5 mt-lg-0 reveal" data-anim="zoom">
+                        <img src="https://images.pexels.com/photos/12644988/pexels-photo-12644988.jpeg"
+                            alt="Hands holding soil with young plant"
+                            class="img-fluid rounded-4 shadow-lg skeleton-wrapper skeleton"
+                            style="max-height: 450px; object-fit: cover; width: 100%;">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 2: Featured Seed Collections -->
+        <section class="section-padding" style="background-color: var(--bg-primary);">
+            <div class="container">
+                <div class="text-center mb-5 reveal" data-anim="fade-up">
+                    <span class="text-gold fw-bold text-uppercase tracking-wider">Heritage Selection</span>
+                    <h2 class="display-5 mt-2">Featured Collections</h2>
+                </div>
+                <div class="row g-4">
+                    <div class="col-md-4 reveal" data-anim="fade-up">
+                        <div class="card h-100 border-0 shadow-sm"
+                            style="background: var(--card-bg); border-radius: 15px; overflow: hidden;">
+                            <img src="https://images.pexels.com/photos/9399387/pexels-photo-9399387.jpeg"
+                                alt="Heritage Tomatoes" class="card-img-top skeleton-wrapper skeleton"
+                                style="height: 250px; object-fit: cover;">
+                            <div class="card-body p-4">
+                                <h4>Heirloom Tomatoes</h4>
+                                <p>A vibrant mix of historic tomato varieties prized for unparalleled flavor.</p>
+                                <a href="service-details.html" class="text-gold fw-bold">View Collection <i
+                                        class="fa-solid fa-arrow-right ms-2"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 reveal" data-anim="fade-up" style="transition-delay: 0.2s;">
+                        <div class="card h-100 border-0 shadow-sm"
+                            style="background: var(--card-bg); border-radius: 15px; overflow: hidden;">
+                            <img src="https://images.pexels.com/photos/33893320/pexels-photo-33893320.jpeg"
+                                alt="Root Vegetables" class="card-img-top skeleton-wrapper skeleton"
+                                style="height: 250px; object-fit: cover;">
+                            <div class="card-body p-4">
+                                <h4>Root Vegetables</h4>
+                                <p>Hardy, traditional root crops that have sustained generations.</p>
+                                <a href="service-details.html" class="text-gold fw-bold">View Collection <i
+                                        class="fa-solid fa-arrow-right ms-2"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 reveal" data-anim="fade-up" style="transition-delay: 0.4s;">
+                        <div class="card h-100 border-0 shadow-sm"
+                            style="background: var(--card-bg); border-radius: 15px; overflow: hidden;">
+                            <img src="https://images.pexels.com/photos/6694166/pexels-photo-6694166.jpeg"
+                                alt="Medicinal Herbs" class="card-img-top skeleton-wrapper skeleton"
+                                style="height: 250px; object-fit: cover;">
+                            <div class="card-body p-4">
+                                <h4>Medicinal Herbs</h4>
+                                <p>Ancient healing plants essential for any biodiversity garden.</p>
+                                <a href="service-details.html" class="text-gold fw-bold">View Collection <i
+                                        class="fa-solid fa-arrow-right ms-2"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 3: Why Heirloom Seeds Matter -->
+        <section class="section-padding parallax-section">
+            <div class="container position-relative" style="z-index: 2;">
+                <div class="row align-items-center">
+                    <div class="col-lg-6 reveal" data-anim="fade-up">
+                        <h2 class="display-4 text-white mb-4">Why Heirloom Seeds Matter</h2>
+                        <p class="lead text-light mb-4">In a world of mass production, heirloom seeds represent
+                            agricultural heritage, superior nutrition, and resilient biodiversity.</p>
+                        <ul class="list-unstyled text-light mb-5 fs-5">
+                            <li class="mb-3"><i class="fa-solid fa-check text-gold me-3"></i> 100% Non-GMO & Untreated
+                            </li>
+                            <li class="mb-3"><i class="fa-solid fa-check text-gold me-3"></i> Naturally bred for
+                                generations</li>
+                            <li class="mb-3"><i class="fa-solid fa-check text-gold me-3"></i> Superior flavor and
+                                nutrition profiles</li>
+                        </ul>
+                        <a href="about.html" class="btn-primary">Learn About Our Mission</a>
+                    </div>
+                    <div class="col-lg-6 mt-5 mt-lg-0 reveal" data-anim="slide-right">
+                        <div class="position-relative p-lg-4 w-75 mx-auto">
+                            <img src="https://images.unsplash.com/photo-1592841200221-a6898f307baa?q=80&w=800&auto=format&fit=crop"
+                                class="img-fluid rounded-4 shadow-lg skeleton-wrapper skeleton w-100"
+                                style="border: 6px solid rgba(255, 255, 255, 0.1); max-height: 450px; object-fit: cover;"
+                                alt="Preserving Seeds">
+                            <div
+                                class="position-absolute bottom-0 start-0 translate-middle-y ms-2 ms-lg-0 d-none d-sm-block">
+                                <div class="glass-card p-4 text-center shadow-lg"
+                                    style="border-radius: 20px; background: rgba(255,255,255,0.15);">
+                                    <h3 class="text-gold mb-1 fw-bold">10,000+</h3>
+                                    <span class="text-white small fw-bold text-uppercase tracking-wider">Varieties
+                                        Saved</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 4: Seasonal Growing Calendar -->
+        <section class="section-padding" style="background-color: var(--bg-secondary);">
+            <div class="container">
+                <div class="text-center mb-5 reveal" data-anim="fade-up">
+                    <span class="text-gold fw-bold text-uppercase tracking-wider">Expert Guidance</span>
+                    <h2 class="display-5 mt-2">Seasonal Growing Calendar</h2>
+                </div>
+                <div class="row align-items-center">
+                    <div class="col-lg-6 mb-5 mb-lg-0 reveal" data-anim="zoom">
+                        <div class="position-relative p-3">
+                            <!-- Modern Background Animation -->
+                            <div class="position-absolute w-100 h-100 rounded-circle"
+                                style="background: var(--gold-accent); top: -10px; left: -10px; opacity: 0.3; filter: blur(40px); animation: pulse 4s infinite alternate;">
+                            </div>
+                            <img src="https://images.pexels.com/photos/12003830/pexels-photo-12003830.jpeg"
+                                class="img-fluid rounded-4 shadow-lg position-relative skeleton-wrapper skeleton"
+                                style="z-index: 2; transform: translateY(0); animation: float 6s ease-in-out infinite;"
+                                alt="Seasonal Growing">
+                        </div>
+                    </div>
+                    <div class="col-lg-6 ps-lg-5">
+                        <div class="timeline">
+                            <div class="timeline-item reveal" data-anim="slide-right">
+                                <h4>Spring Sowing</h4>
+                                <p>Start your early greens, peas, and radishes as the soil thaws. Perfect time for
+                                    indoor tomato seed starting.</p>
+                            </div>
+                            <div class="timeline-item reveal" data-anim="slide-right" style="transition-delay: 0.2s;">
+                                <h4>Summer Bounties</h4>
+                                <p>Plant heat-loving varieties like squash, beans, and peppers. Ensure consistent
+                                    watering during dry spells.</p>
+                            </div>
+                            <div class="timeline-item reveal" data-anim="slide-right" style="transition-delay: 0.4s;">
+                                <h4>Autumn Harvest</h4>
+                                <p>Sow cool-weather crops like kale, spinach, and garlic for overwintering. Begin seed
+                                    saving processes.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 5: Customer Success Stories -->
+        <section class="section-padding" style="background-color: var(--bg-primary);">
+            <div class="container">
+                <div class="text-center mb-5 reveal" data-anim="fade-up">
+                    <h2 class="display-5">Gardeners' Success Stories</h2>
+                </div>
+                <div class="row g-4">
+                    <div class="col-md-6 col-lg-4">
+                        <div class="card h-100 border-0 p-4 reveal stagger-card delay-1 d-flex flex-column"
+                            style="background: var(--surface); border-radius: 20px;">
+                            <div class="text-gold mb-3">
+                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                    class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                    class="fa-solid fa-star"></i>
+                            </div>
+                            <p class="fst-italic mb-4 flex-grow-1">"The germination rate on the heritage tomatoes was
+                                incredible. I've never tasted such rich, complex flavors from my garden before."</p>
+                            <div class="d-flex align-items-center mt-auto">
+                                <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=100&auto=format&fit=crop"
+                                    class="rounded-circle skeleton-wrapper skeleton"
+                                    style="width: 50px; height: 50px; object-fit: cover; flex-shrink: 0;"
+                                    alt="Sarah J.">
+                                <div class="ms-3">
+                                    <h6 class="mb-0">Sarah J.</h6>
+                                    <small class="text-muted">Home Gardener</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="card h-100 border-0 p-4 reveal stagger-card delay-2 d-flex flex-column"
+                            style="background: var(--surface); border-radius: 20px;">
+                            <div class="text-gold mb-3">
+                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                    class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                    class="fa-solid fa-star"></i>
+                            </div>
+                            <p class="fst-italic mb-4 flex-grow-1">"As a small farm owner, sourcing reliable heirloom
+                                seeds is crucial. Seed Vault exceeded all my expectations."</p>
+                            <div class="d-flex align-items-center mt-auto">
+                                <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=100&auto=format&fit=crop"
+                                    class="rounded-circle skeleton-wrapper skeleton"
+                                    style="width: 50px; height: 50px; object-fit: cover; flex-shrink: 0;" alt="Mark T.">
+                                <div class="ms-3">
+                                    <h6 class="mb-0">Mark T.</h6>
+                                    <small class="text-muted">Small Farm Owner</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="card h-100 border-0 p-4 reveal stagger-card delay-3 d-flex flex-column"
+                            style="background: var(--surface); border-radius: 20px;">
+                            <div class="text-gold mb-3">
+                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                    class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                    class="fa-solid fa-star"></i>
+                            </div>
+                            <p class="fst-italic mb-4 flex-grow-1">"Their educational resources helped me establish a
+                                thriving pollinator garden using rare native seed varieties."</p>
+                            <div class="d-flex align-items-center mt-auto">
+                                <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=100&auto=format&fit=crop"
+                                    class="rounded-circle skeleton-wrapper skeleton"
+                                    style="width: 50px; height: 50px; object-fit: cover; flex-shrink: 0;"
+                                    alt="Elena R.">
+                                <div class="ms-3">
+                                    <h6 class="mb-0">Elena R.</h6>
+                                    <small class="text-muted">Community Organizer</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 6: Preservation Mission + Newsletter -->
+        <section class="section-padding position-relative" style="background-color: var(--bg-secondary);">
+            <div class="container position-relative" style="z-index: 2;">
+                <div class="row justify-content-center">
+                    <div class="col-lg-8 reveal" data-anim="fade-up">
+                        <div class="card p-5 text-center shadow-lg border-0"
+                            style="border-radius: 20px; background-color: var(--surface);">
+                            <h2 class="mb-4">Join the Seed Preservation Movement</h2>
+                            <p class="mb-4 fs-5">Subscribe to our newsletter for seasonal growing guides, rare seed
+                                release alerts, and tips on saving seeds.</p>
+                            <form class="d-flex flex-column flex-md-row gap-3 justify-content-center"
+                                onsubmit="event.preventDefault();">
+                                <input type="email" class="form-control form-control-lg border border-2"
+                                    placeholder="Enter your email address" required
+                                    style="max-width: 400px; border-radius: 50px; padding-left: 25px;">
+                                <button type="submit" class="btn-primary" style="white-space: nowrap;">Subscribe
+                                    Now</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+
+    <div id="global-footer"></div>
+    <script src="assets/js/load-footer.js"></script>
+
+    <!-- Bootstrap 5 JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="assets/js/script.js"></script>
+    <script>
+        // Trigger staggered cards manually
+        document.addEventListener('DOMContentLoaded', () => {
+            const staggerCards = document.querySelectorAll('.stagger-card');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.2 });
+            staggerCards.forEach(card => observer.observe(card));
+        });
+    </script>
+</body>
+
+</html>
+

@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seeds & Services | Seed Vault</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <style>
+        .page-hero {
+            padding: 150px 0 100px;
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            position: relative;
+            color: #fff;
+            text-align: center;
+        }
+
+        .page-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.6);
+        }
+
+        .service-card {
+            background: var(--card-bg);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            border: 1px solid var(--border-color);
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--accent-color);
+        }
+
+        .service-icon-box {
+            width: 80px;
+            height: 80px;
+            background: var(--bg-accent);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: -40px auto 20px;
+            position: relative;
+            border: 4px solid var(--bg-primary);
+            box-shadow: var(--shadow);
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar navbar-expand-lg">
+            <div class="container">
+                <brand-logo location="header"></brand-logo>
+                <div class="header-controls d-lg-none">
+                    <button class="icon-btn" id="theme-toggle-mobile"><i class="fa-solid fa-moon"></i></button>
+                    <button class="navbar-toggler" type="button"><i class="fa-solid fa-bars fs-3" style="color: var(--text-primary);"></i></button>
+                </div>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav mx-auto">
+                        <li class="nav-item"><a class="nav-link" href="index.html">Home 1</a></li>
+                        <li class="nav-item"><a class="nav-link" href="home-2.html">Home 2</a></li>
+                        <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                        <li class="nav-item"><a class="nav-link active" href="services.html">Seeds</a></li>
+                        <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+                        <li class="nav-item"><a class="nav-link" href="pricing.html">Pricing</a></li>
+
+                        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                    </ul>
+                    <div class="header-controls d-none d-lg-flex">
+                        <button class="icon-btn" id="theme-toggle"><i class="fa-solid fa-moon"></i></button>
+                        <button class="icon-btn" id="rtl-toggle"><i class="fa-solid fa-language"></i></button>
+                        <a href="login.html" class="btn-primary" style="padding: 8px 20px;">Login</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main style="margin-top: 76px;">
+        <!-- Section 1: Hero -->
+        <section class="page-hero"
+            style="background-image: url('https://images.pexels.com/photos/7048061/pexels-photo-7048061.jpeg');">
+            <div class="container position-relative z-1 reveal" data-anim="zoom">
+                <h1 class="display-3 fw-bold mb-3">Seeds & Services</h1>
+                <p class="lead w-75 mx-auto">Comprehensive solutions for preserving and growing agricultural heritage.
+                </p>
+            </div>
+        </section>
+
+        <!-- Section 2: Heritage Seed Collections -->
+        <section class="section-padding" style="background-color: var(--bg-secondary);">
+            <div class="container">
+                <div class="text-center mb-5 reveal" data-anim="fade-up">
+                    <h2 class="display-5">Heritage Seed Collections</h2>
+                    <p class="lead">Curated assortments for every climate and garden size.</p>
+                </div>
+                <div class="row g-4">
+                    <div class="col-md-4 reveal" data-anim="slide-up">
+                        <div class="service-card h-100">
+                            <img src="https://images.pexels.com/photos/12901832/pexels-photo-12901832.jpeg"
+                                class="img-fluid skeleton-wrapper skeleton"
+                                style="height: 200px; width: 100%; object-fit: cover;" alt="Veggie Collection">
+                            <div class="p-4 text-center">
+                                <h4>Vegetable Vault</h4>
+                                <p>Essential heirloom vegetables that form the foundation of any food garden.</p>
+                                <a href="service-details.html" class="btn-outline mt-2">View Catalog</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 reveal" data-anim="slide-up" style="transition-delay: 0.2s;">
+                        <div class="service-card h-100">
+                            <img src="https://images.pexels.com/photos/4871219/pexels-photo-4871219.jpeg"
+                                class="img-fluid skeleton-wrapper skeleton"
+                                style="height: 200px; width: 100%; object-fit: cover;" alt="Herb Collection">
+                            <div class="p-4 text-center">
+                                <h4>Medicinal & Culinary Herbs</h4>
+                                <p>Ancient varieties used for healing and exceptional flavor profiles.</p>
+                                <a href="service-details.html" class="btn-outline mt-2">View Catalog</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 reveal" data-anim="slide-up" style="transition-delay: 0.4s;">
+                        <div class="service-card h-100">
+                            <img src="https://images.pexels.com/photos/29606601/pexels-photo-29606601.jpeg"
+                                class="img-fluid skeleton-wrapper skeleton"
+                                style="height: 200px; width: 100%; object-fit: cover;" alt="Flower Collection">
+                            <div class="p-4 text-center">
+                                <h4>Pollinator Flowers</h4>
+                                <p>Crucial native flowers to attract essential pollinators to your crops.</p>
+                                <a href="service-details.html" class="btn-outline mt-2">View Catalog</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 3: Seed Saving Workshops -->
+        <section class="section-padding" style="background-color: var(--bg-primary);">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-6 mb-4 mb-lg-0 reveal" data-anim="slide-left">
+                        <img src="https://images.pexels.com/photos/9154519/pexels-photo-9154519.jpeg"
+                            class="img-fluid rounded-4 shadow skeleton-wrapper skeleton" alt="Workshop">
+                    </div>
+                    <div class="col-lg-6 ps-lg-5 reveal" data-anim="slide-right">
+                        <span class="text-gold fw-bold">Master the Craft</span>
+                        <h2 class="display-5 mb-4">Seed Saving Workshops</h2>
+                        <p>Learn the ancient art of seed saving from our master agronomists. We offer hands-on workshops
+                            covering isolation techniques, proper harvesting, processing, and long-term storage.</p>
+                        <ul class="list-unstyled mb-4">
+                            <li class="mb-2"><i class="fa-solid fa-check text-accent me-2"></i> Seasonal harvesting
+                                techniques</li>
+                            <li class="mb-2"><i class="fa-solid fa-check text-accent me-2"></i> Dry vs. wet processing
+                            </li>
+                            <li class="mb-2"><i class="fa-solid fa-check text-accent me-2"></i> Preventing
+                                cross-pollination</li>
+                        </ul>
+                        <a href="booking.html" class="btn-primary">Book a Workshop</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 4: Garden Planning Assistance -->
+        <section class="section-padding" style="background-color: var(--bg-secondary);">
+            <div class="container">
+                <div class="row align-items-center flex-row-reverse">
+                    <div class="col-lg-6 mb-4 mb-lg-0 reveal" data-anim="slide-right">
+                        <img src="https://images.pexels.com/photos/36812122/pexels-photo-36812122.jpeg"
+                            class="img-fluid rounded-4 shadow skeleton-wrapper skeleton" alt="Garden Planning">
+                    </div>
+                    <div class="col-lg-6 pe-lg-5 reveal" data-anim="slide-left">
+                        <span class="text-gold fw-bold">Expert Consultations</span>
+                        <h2 class="display-5 mb-4">Garden Planning Assistance</h2>
+                        <p>Whether you're establishing a 100-acre heritage farm or a robust backyard garden, our experts
+                            provide tailored crop rotation plans, companion planting guides, and soil health strategies.
+                        </p>
+                        <a href="booking.html" class="btn-outline mt-3">Schedule a Consultation</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 5: Educational Resources -->
+        <section class="section-padding text-white text-center" style="background-color: var(--accent-color);">
+            <div class="container reveal" data-anim="fade-up">
+                <h2 class="display-5 mb-4" style="color: #ffffff !important;">Access Educational Resources</h2>
+                <p class="lead w-75 mx-auto mb-5" style="color: rgba(255, 255, 255, 0.9) !important;">From comprehensive growing guides to deep dives into the history of
+                    specific heirloom varieties, our library is free for the community.</p>
+                <div class="row justify-content-center">
+                    <div class="col-md-4 mb-3 mb-md-0">
+                        <div class="p-4 border border-light border-opacity-25 rounded-4  bg-opacity-10"
+                            style="backdrop-filter: blur(5px);">
+                            <i class="fa-solid fa-book-open fs-1 text-gold mb-3"></i>
+                            <h4 class="text-white">Growing Guides</h4>
+                            <a href="blog.html" class="text-white text-decoration-underline">Browse Guides</a>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-3 mb-md-0">
+                        <div class="p-4 border border-light border-opacity-25 rounded-4  bg-opacity-10"
+                            style="backdrop-filter: blur(5px);">
+                            <i class="fa-solid fa-video fs-1 text-gold mb-3"></i>
+                            <h4 class="text-white">Video Tutorials</h4>
+                            <a href="blog.html" class="text-white text-decoration-underline">Watch Now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 6: CTA Section -->
+        <section class="section-padding text-center position-relative"
+            style="background: url('https://images.unsplash.com/photo-1595802288075-80252579df6f?q=80&w=1920&auto=format&fit=crop') center/cover fixed;">
+            <div style="position: absolute; top:0; left:0; right:0; bottom:0; background: rgba(46, 89, 57, 0.85);">
+            </div>
+            <div class="container position-relative z-1 reveal" data-anim="zoom">
+                <h2 class="display-5 text-white mb-4">Ready to Grow Your Legacy?</h2>
+                <p class="lead text-light mb-5 mx-auto" style="max-width: 600px;">Join thousands of growers worldwide
+                    who are actively preserving agricultural history through heirloom seeds.</p>
+                <div class="d-flex justify-content-center gap-3 flex-wrap">
+                    <a href="services.html" class="btn-primary btn-lg"
+                        style="background-color: var(--gold-accent); color: #000 !important;">Explore Our Catalog</a>
+                    <a href="signup.html" class="btn-outline btn-lg text-white"
+                        style="border-color: #fff; color: #fff !important;">Become a Member</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div id="global-footer"></div>
+    <script src="assets/js/load-footer.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/script.js"></script>
+    <script></script>
+</body>
+
+</html>
+

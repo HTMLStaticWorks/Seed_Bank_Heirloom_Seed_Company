@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bookings | Seed Vault</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <style>
+        .page-hero {
+            padding: 150px 0 100px;
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            position: relative;
+            color: #fff;
+            text-align: center;
+        }
+        .page-hero::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(0,0,0,0.6);
+        }
+
+        .booking-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+        
+        .booking-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--accent-color);
+        }
+        
+        .form-control, .form-select {
+            background-color: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            color: var(--text-primary);
+            padding: 15px;
+            border-radius: 10px;
+        }
+        
+        .form-control:focus, .form-select:focus {
+            background-color: var(--bg-primary);
+            border-color: var(--accent-color);
+            box-shadow: 0 0 0 0.25rem rgba(46, 89, 57, 0.25);
+            color: var(--text-primary);
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar navbar-expand-lg">
+            <div class="container">
+                <brand-logo location="header"></brand-logo>
+                <div class="header-controls d-lg-none">
+                    <button class="icon-btn" id="theme-toggle-mobile"><i class="fa-solid fa-moon"></i></button>
+                    <button class="navbar-toggler" type="button"><i class="fa-solid fa-bars fs-3" style="color: var(--text-primary);"></i></button>
+                </div>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav mx-auto">
+                        <li class="nav-item"><a class="nav-link" href="index.html">Home 1</a></li>
+                        <li class="nav-item"><a class="nav-link" href="home-2.html">Home 2</a></li>
+                        <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                        <li class="nav-item"><a class="nav-link" href="services.html">Seeds</a></li>
+                        <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+                        <li class="nav-item"><a class="nav-link" href="pricing.html">Pricing</a></li>
+
+                        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                    </ul>
+                    <div class="header-controls d-none d-lg-flex">
+                        <button class="icon-btn" id="theme-toggle"><i class="fa-solid fa-moon"></i></button>
+                        <button class="icon-btn" id="rtl-toggle"><i class="fa-solid fa-language"></i></button>
+                        <a href="login.html" class="btn-primary" style="padding: 8px 20px;">Login</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main style="margin-top: 76px;">
+        <!-- Section 1: Hero -->
+        <section class="page-hero" style="background-image: url('https://images.unsplash.com/photo-1523348837708-15d4a09cfac2?q=80&w=1920&auto=format&fit=crop');">
+            <div class="container position-relative z-1 reveal" data-anim="zoom">
+                <h1 class="display-3 fw-bold mb-3">Bookings & Consultations</h1>
+                <p class="lead w-75 mx-auto">Reserve your spot in our masterclasses or schedule a private farm consultation.</p>
+            </div>
+        </section>
+
+        <!-- Section 2: Workshop Booking -->
+        <section class="section-padding" style="background-color: var(--bg-primary);">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-6 mb-5 mb-lg-0 reveal" data-anim="slide-left">
+                        <span class="text-gold fw-bold">Masterclasses</span>
+                        <h2 class="display-5 mb-4">Book a Workshop</h2>
+                        <p class="mb-4">Our intensive 2-day workshops cover everything from soil amendment and companion planting to advanced seed extraction and long-term climate-controlled storage.</p>
+                        <img src="https://images.unsplash.com/photo-1592398471378-0021665a5857?q=80&w=800&auto=format&fit=crop" class="img-fluid rounded-4 shadow skeleton-wrapper skeleton" alt="Workshop">
+                    </div>
+                    <div class="col-lg-6 reveal" data-anim="slide-right">
+                        <div class="booking-card">
+                            <h4 class="mb-4">Workshop Registration</h4>
+                            <form id="workshopForm" class="needs-validation" novalidate>
+                                <div class="mb-3">
+                                    <label class="form-label">Full Name</label>
+                                    <input type="text" class="form-control" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Email Address</label>
+                                    <input type="email" class="form-control" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Select Workshop</label>
+                                    <select class="form-select" required>
+                                        <option value="">Choose...</option>
+                                        <option>Tomato Seed Saving (Aug 15-16)</option>
+                                        <option>Heritage Grains Harvesting (Sep 10-11)</option>
+                                        <option>Winter Cover Cropping (Oct 05-06)</option>
+                                    </select>
+                                </div>
+                                <div class="mb-4">
+                                    <label class="form-label">Number of Attendees</label>
+                                    <input type="number" class="form-control" min="1" max="5" value="1" required>
+                                </div>
+                                <button type="submit" class="btn-primary w-100 border-0 py-3">Secure My Spot</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 3: Consultation Booking -->
+        <section class="section-padding" style="background-color: var(--bg-secondary);">
+            <div class="container">
+                <div class="row align-items-center flex-row-reverse">
+                    <div class="col-lg-6 mb-5 mb-lg-0 reveal" data-anim="slide-right">
+                        <span class="text-gold fw-bold">Private Expert Advice</span>
+                        <h2 class="display-5 mb-4">Farm Consultations</h2>
+                        <p class="mb-4">Need personalized advice? Our senior agronomists are available for virtual or on-site consultations to review your property's soil health, create crop rotation plans, and design isolation strategies.</p>
+                        <ul class="list-unstyled mb-0">
+                            <li class="mb-2"><i class="fa-solid fa-check text-accent me-2"></i> Comprehensive Soil Analysis</li>
+                            <li class="mb-2"><i class="fa-solid fa-check text-accent me-2"></i> Custom Crop Planning</li>
+                            <li><i class="fa-solid fa-check text-accent me-2"></i> Pest Management Strategies</li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-6 reveal" data-anim="slide-left">
+                        <div class="booking-card">
+                            <h4 class="mb-4">Request Consultation</h4>
+                            <form id="consultForm" class="needs-validation" novalidate>
+                                <div class="row">
+                                    <div class="col-md-6 mb-3">
+                                        <label class="form-label">First Name</label>
+                                        <input type="text" class="form-control" required>
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        <label class="form-label">Last Name</label>
+                                        <input type="text" class="form-control" required>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Consultation Type</label>
+                                    <select class="form-select" required>
+                                        <option value="">Choose...</option>
+                                        <option>Virtual Video Call (1 Hr)</option>
+                                        <option>On-Site Property Visit (Half Day)</option>
+                                    </select>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Preferred Date</label>
+                                    <input type="date" class="form-control" required>
+                                </div>
+                                <div class="mb-4">
+                                    <label class="form-label">Briefly describe your goals</label>
+                                    <textarea class="form-control" rows="3" required></textarea>
+                                </div>
+                                <button type="submit" class="btn-outline w-100 py-3">Submit Request</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 4: Calendar Section -->
+        <section class="section-padding text-center" style="background-color: var(--bg-primary);">
+            <div class="container reveal" data-anim="fade-up">
+                <span class="text-gold fw-bold">Availability</span>
+                <h2 class="display-5 mt-2 mb-5">Upcoming Schedule</h2>
+                <div class="table-responsive rounded-4 shadow-sm border border-light overflow-hidden">
+                    <table class="table table-hover mb-0" style="background: var(--card-bg);">
+                        <thead style="background: var(--accent-color); color: white;">
+                            <tr>
+                                <th class="p-4 border-0">Event / Service</th>
+                                <th class="p-4 border-0">Date</th>
+                                <th class="p-4 border-0">Location</th>
+                                <th class="p-4 border-0">Status</th>
+                            </tr>
+                        </thead>
+                        <tbody class="align-middle">
+                            <tr>
+                                <td class="p-4 border-bottom border-light fw-bold">Tomato Seed Saving Masterclass</td>
+                                <td class="p-4 border-bottom border-light">Aug 15-16, 2024</td>
+                                <td class="p-4 border-bottom border-light">Main Farm Hub</td>
+                                <td class="p-4 border-bottom border-light"><span class="badge bg-danger rounded-pill px-3">Sold Out</span></td>
+                            </tr>
+                            <tr>
+                                <td class="p-4 border-bottom border-light fw-bold">Heritage Grains Harvesting</td>
+                                <td class="p-4 border-bottom border-light">Sep 10-11, 2024</td>
+                                <td class="p-4 border-bottom border-light">North Field</td>
+                                <td class="p-4 border-bottom border-light"><span class="badge bg-success rounded-pill px-3">3 Spots Left</span></td>
+                            </tr>
+                            <tr>
+                                <td class="p-4 border-bottom border-light fw-bold">Virtual Consultations (Open Block)</td>
+                                <td class="p-4 border-bottom border-light">Every Tuesday</td>
+                                <td class="p-4 border-bottom border-light">Online (Zoom)</td>
+                                <td class="p-4 border-bottom border-light"><span class="badge bg-primary rounded-pill px-3">Available</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 5: FAQ + CTA -->
+        <section class="section-padding" style="background-color: var(--bg-secondary);">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-6 mb-5 mb-lg-0 reveal" data-anim="slide-right">
+                        <h3 class="mb-4">Booking FAQs</h3>
+                        <div class="accordion" id="bookingFAQ">
+                            <div class="accordion-item border-0 mb-3 shadow-sm rounded-3 overflow-hidden">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed " type="button" data-bs-toggle="collapse" data-bs-target="#bfaq1">
+                                        What happens if it rains during an on-site workshop?
+                                    </button>
+                                </h2>
+                                <div id="bfaq1" class="accordion-collapse collapse" data-bs-parent="#bookingFAQ">
+                                    <div class="accordion-body ">
+                                        All our workshops go ahead rain or shine. We have large greenhouse facilities for practical work if field conditions are unsuitable.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item border-0 shadow-sm rounded-3 overflow-hidden">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed " type="button" data-bs-toggle="collapse" data-bs-target="#bfaq2">
+                                        What is the cancellation policy?
+                                    </button>
+                                </h2>
+                                <div id="bfaq2" class="accordion-collapse collapse" data-bs-parent="#bookingFAQ">
+                                    <div class="accordion-body ">
+                                        Full refunds are provided for cancellations made up to 14 days before the event. After that, we offer credit for future workshops.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-5 offset-lg-1 text-center reveal" data-anim="zoom">
+                        <div class="p-5 rounded-4" style="background: linear-gradient(135deg, var(--accent-color), var(--accent-hover)); color: white;">
+                            <i class="fa-solid fa-headset fs-1 mb-3 text-gold"></i>
+                            <h3 class="text-white mb-3">Need Custom Scheduling?</h3>
+                            <p class="mb-4">If you represent a large agricultural organization or educational institution, we can arrange custom private workshops.</p>
+                            <a href="contact.html" class="btn-outline border-white text-white w-100">Contact Support</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div id="global-footer"></div>
+    <script src="assets/js/load-footer.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/script.js"></script>
+    <script>
+        // Client side form validation demo
+        (function () {
+            'use strict'
+            var forms = document.querySelectorAll('.needs-validation')
+            Array.prototype.slice.call(forms)
+                .forEach(function (form) {
+                    form.addEventListener('submit', function (event) {
+                        if (!form.checkValidity()) {
+                            event.preventDefault()
+                            event.stopPropagation()
+                        }
+                        form.classList.add('was-validated')
+                    }, false)
+                })
+        })()
+    </script>
+</body>
+</html>
+

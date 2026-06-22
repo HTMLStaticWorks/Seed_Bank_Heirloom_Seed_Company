@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visual Gallery | Seed Vault</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <style>
+        .page-hero {
+            padding: 150px 0 100px;
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            position: relative;
+            color: #fff;
+            text-align: center;
+        }
+
+        .page-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.6);
+        }
+
+        .masonry-grid {
+            column-count: 3;
+            column-gap: 20px;
+        }
+
+        @media (max-width: 991px) {
+            .masonry-grid {
+                column-count: 2;
+            }
+        }
+
+        @media (max-width: 575px) {
+            .masonry-grid {
+                column-count: 1;
+            }
+        }
+
+        .masonry-item {
+            break-inside: avoid;
+            margin-bottom: 20px;
+            position: relative;
+            border-radius: 15px;
+            overflow: hidden;
+        }
+
+        .masonry-item img {
+            width: 100%;
+            height: 350px;
+            object-fit: cover;
+            display: block;
+            border-radius: 15px;
+            transition: transform 0.5s ease;
+        }
+
+        .masonry-item:hover img {
+            transform: scale(1.05);
+        }
+
+        .masonry-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+            padding: 30px 20px 20px;
+            color: #fff;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .masonry-item:hover .masonry-overlay {
+            opacity: 1;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar navbar-expand-lg">
+            <div class="container">
+                <brand-logo location="header"></brand-logo>
+                <div class="header-controls d-lg-none">
+                    <button class="icon-btn" id="theme-toggle-mobile"><i class="fa-solid fa-moon"></i></button>
+                    <button class="navbar-toggler" type="button"><i class="fa-solid fa-bars fs-3" style="color: var(--text-primary);"></i></button>
+                </div>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav mx-auto">
+                        <li class="nav-item"><a class="nav-link" href="index.html">Home 1</a></li>
+                        <li class="nav-item"><a class="nav-link" href="home-2.html">Home 2</a></li>
+                        <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                        <li class="nav-item"><a class="nav-link" href="services.html">Seeds</a></li>
+                        <li class="nav-item"><a class="nav-link active" href="gallery.html">Gallery</a></li>
+                        <li class="nav-item"><a class="nav-link" href="pricing.html">Pricing</a></li>
+
+                        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                    </ul>
+                    <div class="header-controls d-none d-lg-flex">
+                        <button class="icon-btn" id="theme-toggle"><i class="fa-solid fa-moon"></i></button>
+                        <button class="icon-btn" id="rtl-toggle"><i class="fa-solid fa-language"></i></button>
+                        <a href="login.html" class="btn-primary" style="padding: 8px 20px;">Login</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main style="margin-top: 76px;">
+        <!-- Section 1: Hero -->
+        <section class="page-hero"
+            style="background-image: url('https://images.pexels.com/photos/9822752/pexels-photo-9822752.jpeg');">
+            <div class="container position-relative z-1 reveal" data-anim="zoom">
+                <h1 class="display-3 fw-bold mb-3">Visual Gallery</h1>
+                <p class="lead w-75 mx-auto">A breathtaking look into the world of heirloom varieties and heritage
+                    farming.</p>
+            </div>
+        </section>
+
+        <!-- Section 2: Seed Collections -->
+        <section class="section-padding" style="background-color: var(--bg-primary);">
+            <div class="container">
+                <div class="text-center mb-5 reveal" data-anim="fade-up">
+                    <span class="text-gold fw-bold">The Vault</span>
+                    <h2 class="display-5 mt-2">Seed Collections</h2>
+                </div>
+                <div class="masonry-grid reveal" data-anim="fade-up">
+                    <div class="masonry-item">
+                        <img src="https://images.pexels.com/photos/162830/tomatoes-tomato-harvest-healthy-food-162830.jpeg"
+                            class="skeleton-wrapper skeleton" alt="Seed Mix">
+                        <div class="masonry-overlay">
+                            <h5>Summer Heirloom Mix</h5>
+                        </div>
+                    </div>
+                    <div class="masonry-item">
+                        <img src="https://images.pexels.com/photos/4820845/pexels-photo-4820845.jpeg"
+                            class="skeleton-wrapper skeleton" alt="Hands with seeds">
+                        <div class="masonry-overlay">
+                            <h5>Bean Sorting</h5>
+                        </div>
+                    </div>
+                    <div class="masonry-item">
+                        <img src="https://images.pexels.com/photos/8796313/pexels-photo-8796313.jpeg"
+                            class="skeleton-wrapper skeleton" alt="Tomato seeds">
+                        <div class="masonry-overlay">
+                            <h5>Tomato Extraction</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 3: Vegetable Varieties -->
+        <section class="section-padding" style="background-color: var(--bg-secondary);">
+            <div class="container">
+                <div class="text-center mb-5 reveal" data-anim="fade-up">
+                    <span class="text-gold fw-bold">Bounty</span>
+                    <h2 class="display-5 mt-2">Heritage Varieties</h2>
+                </div>
+                <div class="masonry-grid reveal" data-anim="fade-up">
+                    <div class="masonry-item">
+                        <img src="https://images.pexels.com/photos/29889252/pexels-photo-29889252.jpeg"
+                            class="skeleton-wrapper skeleton" alt="Corn">
+                        <div class="masonry-overlay">
+                            <h5>Glass Gem Corn</h5>
+                        </div>
+                    </div>
+                    <div class="masonry-item">
+                        <img src="https://images.pexels.com/photos/19243756/pexels-photo-19243756.jpeg"
+                            class="skeleton-wrapper skeleton" alt="Carrots">
+                        <div class="masonry-overlay">
+                            <h5>Purple Dragon Carrots</h5>
+                        </div>
+                    </div>
+                    <div class="masonry-item">
+                        <img src="https://images.pexels.com/photos/37931494/pexels-photo-37931494.jpeg"
+                            class="skeleton-wrapper skeleton" alt="Tomatoes">
+                        <div class="masonry-overlay">
+                            <h5>Brandywine Tomatoes</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 4: Preservation Activities -->
+        <section class="section-padding" style="background-color: var(--bg-primary);">
+            <div class="container">
+                <div class="text-center mb-5 reveal" data-anim="fade-up">
+                    <span class="text-gold fw-bold">In Action</span>
+                    <h2 class="display-5 mt-2">Preservation Work</h2>
+                </div>
+                <div class="masonry-grid reveal" data-anim="fade-up">
+                    <div class="masonry-item">
+                        <img src="https://images.pexels.com/photos/11633598/pexels-photo-11633598.jpeg"
+                            class="skeleton-wrapper skeleton" alt="Farming">
+                        <div class="masonry-overlay">
+                            <h5>Isolation Planting</h5>
+                        </div>
+                    </div>
+                    <div class="masonry-item">
+                        <img src="https://images.pexels.com/photos/4975379/pexels-photo-4975379.jpeg"
+                            class="skeleton-wrapper skeleton" alt="Agronomists">
+                        <div class="masonry-overlay">
+                            <h5>Field Inspection</h5>
+                        </div>
+                    </div>
+                    <div class="masonry-item">
+                        <img src="https://images.pexels.com/photos/37793720/pexels-photo-37793720.jpeg"
+                            class="skeleton-wrapper skeleton" alt="Packaging">
+                        <div class="masonry-overlay">
+                            <h5>Climate Vault Storage</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 5: Community Garden Showcase -->
+        <section class="section-padding" style="background-color: var(--bg-secondary);">
+            <div class="container">
+                <div class="text-center mb-5 reveal" data-anim="fade-up">
+                    <span class="text-gold fw-bold">Our Network</span>
+                    <h2 class="display-5 mt-2">Community Gardens</h2>
+                </div>
+                <div class="masonry-grid reveal" data-anim="fade-up">
+                    <div class="masonry-item">
+                        <img src="https://images.pexels.com/photos/8165156/pexels-photo-8165156.jpeg"
+                            class="skeleton-wrapper skeleton" alt="Community Garden">
+                        <div class="masonry-overlay">
+                            <h5>Urban Detroit Plot</h5>
+                        </div>
+                    </div>
+                    <div class="masonry-item">
+                        <img src="https://images.pexels.com/photos/27033658/pexels-photo-27033658.jpeg"
+                            class="skeleton-wrapper skeleton" alt="Workshop">
+                        <div class="masonry-overlay">
+                            <h5>Seattle Co-op</h5>
+                        </div>
+                    </div>
+                    <div class="masonry-item">
+                        <img src="https://images.pexels.com/photos/37828635/pexels-photo-37828635.jpeg"
+                            class="skeleton-wrapper skeleton" alt="Farm">
+                        <div class="masonry-overlay">
+                            <h5>Oregon Heritage Farm</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div id="global-footer"></div>
+    <script src="assets/js/load-footer.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/script.js"></script>
+    <script></script>
+</body>
+
+</html>
+

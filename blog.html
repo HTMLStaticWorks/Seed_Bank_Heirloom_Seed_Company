@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog & Guides | Seed Vault</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <style>
+        .page-hero {
+            padding: 150px 0 100px;
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            position: relative;
+            color: #fff;
+            text-align: center;
+        }
+        .page-hero::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(0,0,0,0.6);
+        }
+
+        .blog-card {
+            background: var(--card-bg);
+            border-radius: 15px;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            transition: var(--transition);
+        }
+        
+        .blog-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow);
+            border-color: var(--accent-color);
+        }
+        
+        .blog-img-wrap {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .blog-img-wrap img {
+            transition: transform 0.5s ease;
+        }
+        
+        .blog-card:hover .blog-img-wrap img {
+            transform: scale(1.05);
+        }
+        
+        .blog-badge {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background: var(--accent-color);
+            color: #fff;
+            padding: 5px 15px;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: bold;
+            z-index: 2;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar navbar-expand-lg">
+            <div class="container">
+                <brand-logo location="header"></brand-logo>
+                <div class="header-controls d-lg-none">
+                    <button class="icon-btn" id="theme-toggle-mobile"><i class="fa-solid fa-moon"></i></button>
+                    <button class="navbar-toggler" type="button"><i class="fa-solid fa-bars fs-3" style="color: var(--text-primary);"></i></button>
+                </div>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav mx-auto">
+                        <li class="nav-item"><a class="nav-link" href="index.html">Home 1</a></li>
+                        <li class="nav-item"><a class="nav-link" href="home-2.html">Home 2</a></li>
+                        <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                        <li class="nav-item"><a class="nav-link" href="services.html">Seeds</a></li>
+                        <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+                        <li class="nav-item"><a class="nav-link" href="pricing.html">Pricing</a></li>
+
+                        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                    </ul>
+                    <div class="header-controls d-none d-lg-flex">
+                        <button class="icon-btn" id="theme-toggle"><i class="fa-solid fa-moon"></i></button>
+                        <button class="icon-btn" id="rtl-toggle"><i class="fa-solid fa-language"></i></button>
+                        <a href="login.html" class="btn-primary" style="padding: 8px 20px;">Login</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main style="margin-top: 76px;">
+        <!-- Section 1: Hero -->
+        <section class="page-hero" style="background-image: url('https://images.unsplash.com/photo-1599940824399-b87987ceb72a?q=80&w=1920&auto=format&fit=crop');">
+            <div class="container position-relative z-1 reveal" data-anim="zoom">
+                <h1 class="display-3 fw-bold mb-3">The Journal</h1>
+                <p class="lead w-75 mx-auto">Insights, stories, and expert growing guides from our master agronomists.</p>
+            </div>
+        </section>
+
+        <!-- Section 2: Featured Articles -->
+        <section class="section-padding" style="background-color: var(--bg-secondary);">
+            <div class="container">
+                <div class="text-center mb-5 reveal" data-anim="fade-up">
+                    <span class="text-gold fw-bold">Must Read</span>
+                    <h2 class="display-5 mt-2">Featured Articles</h2>
+                </div>
+                <div class="row g-4">
+                    <div class="col-lg-6 reveal" data-anim="slide-left">
+                        <div class="blog-card h-100">
+                            <div class="blog-img-wrap">
+                                <span class="blog-badge">Seed Saving</span>
+                                <img src="https://images.unsplash.com/photo-1464226184884-fa280b87c399?q=80&w=800&auto=format&fit=crop" class="img-fluid w-100 skeleton-wrapper skeleton" style="height: 250px; object-fit: cover;" alt="Featured Blog">
+                            </div>
+                            <div class="p-4">
+                                <div class="text-muted mb-2"><i class="fa-regular fa-calendar me-2"></i> October 12, 2023</div>
+                                <h3 class="mb-3"><a href="blog-details.html">The Lost Art of Saving Tomato Seeds</a></h3>
+                                <p>Discover the fermentation method required to properly save viable tomato seeds for next year's planting season.</p>
+                                <a href="blog-details.html" class="text-gold fw-bold">Read Full Article <i class="fa-solid fa-arrow-right ms-2"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 reveal" data-anim="slide-right">
+                        <div class="blog-card h-100">
+                            <div class="blog-img-wrap">
+                                <span class="blog-badge">History</span>
+                                <img src="https://images.unsplash.com/photo-1589927986089-35812388d1f4?q=80&w=800&auto=format&fit=crop" class="img-fluid w-100 skeleton-wrapper skeleton" style="height: 250px; object-fit: cover;" alt="Featured Blog 2">
+                            </div>
+                            <div class="p-4">
+                                <div class="text-muted mb-2"><i class="fa-regular fa-calendar me-2"></i> September 28, 2023</div>
+                                <h3 class="mb-3"><a href="blog-details.html">The Story Behind the Cherokee Purple</a></h3>
+                                <p>Explore the fascinating lineage of one of the most beloved and visually striking heirloom tomatoes in existence.</p>
+                                <a href="blog-details.html" class="text-gold fw-bold">Read Full Article <i class="fa-solid fa-arrow-right ms-2"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 3: Gardening Tips -->
+        <section class="section-padding" style="background-color: var(--bg-primary);">
+            <div class="container">
+                <div class="row align-items-end mb-5">
+                    <div class="col-md-8 reveal" data-anim="slide-left">
+                        <h2 class="display-5">Practical Gardening Tips</h2>
+                    </div>
+                    <div class="col-md-4 text-md-end mt-3 mt-md-0 reveal" data-anim="slide-right">
+                        <button class="btn-outline">View All Tips</button>
+                    </div>
+                </div>
+                <div class="row g-4">
+                    <div class="col-md-4 reveal" data-anim="fade-up">
+                        <div class="blog-card h-100 border-0 shadow-sm">
+                            <div class="blog-img-wrap">
+                                <img src="https://images.unsplash.com/photo-1587334274328-64186a80aeee?q=80&w=600&auto=format&fit=crop" class="img-fluid w-100 skeleton-wrapper skeleton" style="height: 200px; object-fit: cover;" alt="Tip 1">
+                            </div>
+                            <div class="p-4">
+                                <h5><a href="blog-details.html">Companion Planting for Pest Control</a></h5>
+                                <a href="blog-details.html" class="text-muted small mt-2 d-inline-block">Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 reveal" data-anim="fade-up" style="transition-delay: 0.2s;">
+                        <div class="blog-card h-100 border-0 shadow-sm">
+                            <div class="blog-img-wrap">
+                                <img src="https://images.unsplash.com/photo-1592398471378-0021665a5857?q=80&w=600&auto=format&fit=crop" class="img-fluid w-100 skeleton-wrapper skeleton" style="height: 200px; object-fit: cover;" alt="Tip 2">
+                            </div>
+                            <div class="p-4">
+                                <h5><a href="blog-details.html">Maximizing Yield in Small Urban Spaces</a></h5>
+                                <a href="blog-details.html" class="text-muted small mt-2 d-inline-block">Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 reveal" data-anim="fade-up" style="transition-delay: 0.4s;">
+                        <div class="blog-card h-100 border-0 shadow-sm">
+                            <div class="blog-img-wrap">
+                                <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=600&auto=format&fit=crop" class="img-fluid w-100 skeleton-wrapper skeleton" style="height: 200px; object-fit: cover;" alt="Tip 3">
+                            </div>
+                            <div class="p-4">
+                                <h5><a href="blog-details.html">Organic Soil Amendment Guide</a></h5>
+                                <a href="blog-details.html" class="text-muted small mt-2 d-inline-block">Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 4: Seasonal Guides -->
+        <section class="section-padding" style="background-color: var(--bg-accent);">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-5 mb-4 mb-lg-0 reveal" data-anim="zoom">
+                        <h2 class="display-5 mb-4">Seasonal Prep Guides</h2>
+                        <p class="lead mb-4">Download our comprehensive seasonal guides to ensure your garden thrives year-round.</p>
+                        <ul class="list-unstyled mb-0">
+                            <li class="mb-3 p-3  rounded-3 shadow-sm d-flex justify-content-between align-items-center">
+                                <span><i class="fa-solid fa-leaf text-success me-2"></i> Spring Awakening Guide</span>
+                                <a href="#" class="text-accent"><i class="fa-solid fa-download"></i></a>
+                            </li>
+                            <li class="mb-3 p-3  rounded-3 shadow-sm d-flex justify-content-between align-items-center">
+                                <span><i class="fa-solid fa-sun text-warning me-2"></i> Summer Maintenance</span>
+                                <a href="#" class="text-accent"><i class="fa-solid fa-download"></i></a>
+                            </li>
+                            <li class="p-3  rounded-3 shadow-sm d-flex justify-content-between align-items-center">
+                                <span><i class="fa-solid fa-snowflake text-info me-2"></i> Winter Cover Crops</span>
+                                <a href="#" class="text-accent"><i class="fa-solid fa-download"></i></a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-6 offset-lg-1 reveal" data-anim="slide-right">
+                        <img src="https://images.unsplash.com/photo-1416879598553-300e84c9b917?q=80&w=800&auto=format&fit=crop" class="img-fluid rounded-4 shadow skeleton-wrapper skeleton" alt="Seasonal Gardening">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 5: Newsletter CTA -->
+        <section class="section-padding text-center" style="background-color: var(--bg-primary);">
+            <div class="container reveal" data-anim="zoom">
+                <div class="p-5 rounded-4 shadow" style="background: var(--card-bg); border: 1px solid var(--border-color);">
+                    <i class="fa-regular fa-envelope-open fs-1 text-gold mb-3"></i>
+                    <h2 class="display-6 mb-3">Never Miss an Update</h2>
+                    <p class="lead mb-4 mx-auto" style="max-width: 600px;">Get the latest articles, rare seed drops, and seasonal reminders delivered straight to your inbox.</p>
+                    <form class="d-flex justify-content-center gap-2 mx-auto" style="max-width: 500px;" onsubmit="event.preventDefault();">
+                        <input type="email" class="form-control form-control-lg" placeholder="Email Address" required>
+                        <button type="submit" class="btn-primary">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div id="global-footer"></div>
+    <script src="assets/js/load-footer.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/script.js"></script>
+    <script></script>
+</body>
+</html>
+

@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Lost Art of Saving Tomato Seeds | Seed Vault</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <style>
+        .page-hero {
+            padding: 150px 0 100px;
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            position: relative;
+            color: #fff;
+            text-align: center;
+        }
+        .page-hero::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(0,0,0,0.6);
+        }
+
+        .article-content {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--text-primary);
+        }
+        .article-content h3 {
+            margin-top: 40px;
+            margin-bottom: 20px;
+        }
+        .article-content blockquote {
+            border-left: 5px solid var(--accent-color);
+            padding: 20px;
+            background: var(--bg-secondary);
+            font-style: italic;
+            margin: 30px 0;
+            border-radius: 0 10px 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar navbar-expand-lg">
+            <div class="container">
+                <brand-logo location="header"></brand-logo>
+                <div class="header-controls d-lg-none">
+                    <button class="icon-btn" id="theme-toggle-mobile"><i class="fa-solid fa-moon"></i></button>
+                    <button class="navbar-toggler" type="button"><i class="fa-solid fa-bars fs-3" style="color: var(--text-primary);"></i></button>
+                </div>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav mx-auto">
+                        <li class="nav-item"><a class="nav-link" href="index.html">Home 1</a></li>
+                        <li class="nav-item"><a class="nav-link" href="home-2.html">Home 2</a></li>
+                        <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                        <li class="nav-item"><a class="nav-link" href="services.html">Seeds</a></li>
+                        <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+                        <li class="nav-item"><a class="nav-link" href="pricing.html">Pricing</a></li>
+
+                        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                    </ul>
+                    <div class="header-controls d-none d-lg-flex">
+                        <button class="icon-btn" id="theme-toggle"><i class="fa-solid fa-moon"></i></button>
+                        <button class="icon-btn" id="rtl-toggle"><i class="fa-solid fa-language"></i></button>
+                        <a href="login.html" class="btn-primary" style="padding: 8px 20px;">Login</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main style="margin-top: 76px;">
+        <!-- Section 1: Hero -->
+        <section class="page-hero" style="background-image: url('https://images.unsplash.com/photo-1595806659756-11f26bdcc841?q=80&w=1920&auto=format&fit=crop');">
+            <div class="container position-relative z-1 reveal" data-anim="zoom">
+                <span class="badge bg-success mb-3 px-3 py-2" style="font-size: 1rem;">Seed Saving</span>
+                <h1 class="display-4 fw-bold mb-3">The Lost Art of Saving Tomato Seeds</h1>
+                <div class="d-flex justify-content-center align-items-center gap-4 text-light">
+                    <span><i class="fa-regular fa-calendar me-2"></i> October 12, 2023</span>
+                    <span><i class="fa-regular fa-user me-2"></i> Dr. Amelia Vance</span>
+                    <span><i class="fa-regular fa-clock me-2"></i> 8 Min Read</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 2: Featured Image -->
+        <section class="py-5" style="background-color: var(--bg-primary);">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-10 reveal" data-anim="fade-up">
+                        <img src="https://images.unsplash.com/photo-1592841200221-a6898f307baa?q=80&w=1200&auto=format&fit=crop" class="img-fluid rounded-4 shadow-lg w-100 skeleton-wrapper skeleton" style="max-height: 500px; object-fit: cover;" alt="Tomato seeds fermenting">
+                        <div class="text-center text-muted mt-3 small">Fermentation is crucial for removing the germination-inhibiting gel around tomato seeds.</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 3: Article Content -->
+        <section class="pb-5" style="background-color: var(--bg-primary);">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-8 article-content reveal" data-anim="fade-up">
+                        <p class="lead fw-normal">Saving tomato seeds isn't as simple as squeezing them onto a paper towel and letting them dry. To ensure a high germination rate and kill seed-borne diseases, you must mimic the natural rotting process that occurs in the wild.</p>
+                        
+                        <h3>The Fermentation Method</h3>
+                        <p>Tomato seeds are encased in a gelatinous sac that contains germination inhibitors. If you don't remove this sac, your seeds may rot in the ground rather than sprout next spring. The fermentation process breaks down this gel, effectively mimicking the natural decomposition of a fallen tomato.</p>
+                        
+                        <blockquote>
+                            "The key to robust heirloom tomatoes lies not in the planting, but in the saving. Fermentation is nature's crucible."
+                        </blockquote>
+
+                        <h3>Step-by-Step Guide</h3>
+                        <ol class="mb-4 ps-4">
+                            <li class="mb-2"><strong>Select the Best Fruit:</strong> Only save seeds from the healthiest, most vigorous plants. Avoid any tomatoes showing signs of disease.</li>
+                            <li class="mb-2"><strong>Squeeze and Soak:</strong> Cut the tomato across its equator and squeeze the seeds and gel into a small jar. Add a little water if the mixture is too thick.</li>
+                            <li class="mb-2"><strong>Wait for the Mold:</strong> Leave the jar in a warm spot out of direct sunlight for 3-5 days. A layer of white mold will form on the surface. This is good!</li>
+                            <li class="mb-2"><strong>Rinse and Sort:</strong> Fill the jar with water and stir vigorously. Good seeds will sink; bad seeds, pulp, and mold will float. Pour off the floaters carefully.</li>
+                            <li class="mb-2"><strong>Dry Completely:</strong> Spread the clean, sunken seeds on a coffee filter or screen (not paper towel, they will stick!) and let them dry for 1-2 weeks in a cool, dry place.</li>
+                        </ol>
+
+                        <div class="d-flex align-items-center mt-5 p-4 border rounded-4 ">
+                            <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=100&auto=format&fit=crop" class="rounded-circle me-4 skeleton-wrapper skeleton" width="80" height="80" alt="Author">
+                            <div>
+                                <h5 class="mb-1">Dr. Amelia Vance</h5>
+                                <p class="mb-0 text-muted small">Head Agronomist at Seed Vault, specializing in Solanaceae preservation.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 4: Related Articles -->
+        <section class="section-padding" style="background-color: var(--bg-secondary);">
+            <div class="container">
+                <h3 class="display-6 mb-5 text-center reveal" data-anim="fade-up">Continue Reading</h3>
+                <div class="row g-4 justify-content-center">
+                    <div class="col-md-5 reveal" data-anim="slide-left">
+                        <div class="card border-0 shadow-sm h-100 rounded-4 overflow-hidden" style="background: var(--card-bg);">
+                            <img src="https://images.unsplash.com/photo-1508599427083-d587c6b966ed?q=80&w=600&auto=format&fit=crop" class="card-img-top skeleton-wrapper skeleton" style="height: 200px; object-fit: cover;" alt="Herbs">
+                            <div class="card-body p-4">
+                                <h5><a href="blog-details.html">Drying Herbs for Seed Saving</a></h5>
+                                <a href="blog-details.html" class="text-gold mt-2 d-inline-block fw-bold">Read Article <i class="fa-solid fa-arrow-right ms-1"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-5 reveal" data-anim="slide-right">
+                        <div class="card border-0 shadow-sm h-100 rounded-4 overflow-hidden" style="background: var(--card-bg);">
+                            <img src="https://images.unsplash.com/photo-1490750967868-88cb4ec0f8af?q=80&w=600&auto=format&fit=crop" class="card-img-top skeleton-wrapper skeleton" style="height: 200px; object-fit: cover;" alt="Flowers">
+                            <div class="card-body p-4">
+                                <h5><a href="blog-details.html">Attracting Pollinators to Heirloom Crops</a></h5>
+                                <a href="blog-details.html" class="text-gold mt-2 d-inline-block fw-bold">Read Article <i class="fa-solid fa-arrow-right ms-1"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 5: Comments CTA -->
+        <section class="section-padding text-center" style="background-color: var(--bg-primary);">
+            <div class="container reveal" data-anim="zoom">
+                <div class="border border-opacity-25 rounded-4 p-5 mx-auto" style="max-width: 800px; border-color: var(--border-color) !important;">
+                    <i class="fa-regular fa-comments fs-1 text-accent mb-3"></i>
+                    <h3 class="mb-3">Join the Discussion</h3>
+                    <p class="mb-4">Have questions about the fermentation process? Want to share your success story with heirloom tomatoes? Log in to leave a comment and join our community of growers.</p>
+                    <a href="login.html" class="btn-primary px-5">Log In to Comment</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div id="global-footer"></div>
+    <script src="assets/js/load-footer.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/script.js"></script>
+    <script></script>
+</body>
+</html>
+

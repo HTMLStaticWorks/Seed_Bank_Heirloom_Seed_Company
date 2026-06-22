@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seed Vault | Discover Rare Seeds</title>
+    <meta name="description" content="Explore our rare seed varieties and learn about the seed preservation process.">
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <style>
+        /* Specific Home 2 Styles */
+        .split-hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+        }
+
+        .split-hero .bg-image {
+            background-image: url('https://images.unsplash.com/photo-1595806659756-11f26bdcc841?q=80&w=1920&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 50%;
+        }
+
+        .split-hero .content-box {
+            padding: 150px 50px 100px;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        @media (max-width: 991px) {
+            .split-hero .bg-image {
+                position: relative;
+                width: 100%;
+                height: 50vh;
+            }
+
+            .split-hero .content-box {
+                height: auto;
+                padding: 120px 20px 50px;
+            }
+        }
+
+        .growing-plant {
+            transform-origin: bottom center;
+            animation: growPlant 3s ease-out forwards;
+        }
+
+        @keyframes growPlant {
+            0% {
+                transform: scaleY(0);
+                opacity: 0;
+            }
+
+            50% {
+                opacity: 1;
+            }
+
+            100% {
+                transform: scaleY(1);
+                opacity: 1;
+            }
+        }
+
+        .modern-gradient-text {
+            background: linear-gradient(45deg, var(--accent-color), var(--gold-accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            display: inline-block;
+            filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.1));
+        }
+
+        .split-hero .bg-image {
+            background-image: url('https://images.pexels.com/photos/2862150/pexels-photo-2862150.jpeg');
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 50%;
+            clip-path: polygon(15% 0, 100% 0, 100% 100%, 0 100%);
+            box-shadow: -20px 0 50px rgba(0, 0, 0, 0.2);
+        }
+
+        .split-hero .bg-image::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to right, rgba(0, 0, 0, 0.3) 0%, transparent 40%);
+        }
+
+        .step-box {
+            text-align: center;
+            padding: 30px;
+            position: relative;
+        }
+
+        .step-number {
+            width: 60px;
+            height: 60px;
+            background: var(--accent-color);
+            color: #fff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin: 0 auto 20px;
+            border: 5px solid var(--bg-primary);
+            box-shadow: var(--shadow);
+            position: relative;
+            z-index: 2;
+        }
+
+        .step-box::after {
+            content: '';
+            position: absolute;
+            top: 60px;
+            right: -50%;
+            width: 100%;
+            height: 2px;
+            background-color: var(--border-color);
+            z-index: 1;
+        }
+
+        .step-box:last-child::after {
+            display: none;
+        }
+
+        @media (max-width: 767px) {
+            .step-box::after {
+                display: none;
+            }
+        }
+
+        .sliding-card {
+            transform: translateX(100px);
+            opacity: 0;
+            transition: all 0.8s ease;
+        }
+
+        .sliding-card.active {
+            transform: translateX(0);
+            opacity: 1;
+        }
+
+        .counter-box {
+            text-align: center;
+            padding: 40px 20px;
+            background: var(--card-bg);
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+        }
+
+        .counter-num {
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--accent-color);
+        }
+
+        .gradient-glow {
+            background: linear-gradient(45deg, var(--accent-color), var(--gold-accent));
+            border-radius: 20px;
+            padding: 3px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .gradient-glow-inner {
+            background: var(--bg-primary);
+            border-radius: 18px;
+            padding: 50px;
+            height: 100%;
+        }
+
+        .gradient-glow::before {
+            content: '';
+            position: absolute;
+            top: -5px;
+            left: -5px;
+            right: -5px;
+            bottom: -5px;
+            background: linear-gradient(45deg, var(--accent-color), var(--gold-accent), var(--accent-light));
+            z-index: -1;
+            filter: blur(20px);
+            opacity: 0;
+            transition: opacity 0.5s ease;
+            border-radius: 25px;
+        }
+
+        .gradient-glow:hover::before {
+            opacity: 0.8;
+            animation: pulseGlow 2s linear infinite;
+        }
+
+        @keyframes pulseGlow {
+            0% {
+                filter: blur(20px);
+            }
+
+            50% {
+                filter: blur(30px);
+            }
+
+            100% {
+                filter: blur(20px);
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar navbar-expand-lg">
+            <div class="container">
+                <brand-logo location="header"></brand-logo>
+
+                <div class="header-controls d-lg-none">
+                    <button class="icon-btn" id="theme-toggle-mobile" aria-label="Toggle Theme">
+                        <i class="fa-solid fa-moon"></i>
+                    </button>
+                    <button class="navbar-toggler" type="button" aria-label="Toggle navigation">
+                        <i class="fa-solid fa-bars fs-3" style="color: var(--text-primary);"></i>
+                    </button>
+                </div>
+
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav mx-auto">
+                        <li class="nav-item"><a class="nav-link" href="index.html">Home 1</a></li>
+                        <li class="nav-item"><a class="nav-link active" href="home-2.html">Home 2</a></li>
+                        <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                        <li class="nav-item"><a class="nav-link" href="services.html">Seeds</a></li>
+                        <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+                        <li class="nav-item"><a class="nav-link" href="pricing.html">Pricing</a></li>
+
+                        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                    </ul>
+
+                    <div class="header-controls d-none d-lg-flex">
+                        <button class="icon-btn" id="theme-toggle" aria-label="Toggle Theme">
+                            <i class="fa-solid fa-moon"></i>
+                        </button>
+                        <button class="icon-btn" id="rtl-toggle" aria-label="Toggle RTL">
+                            <i class="fa-solid fa-language"></i>
+                        </button>
+                        <a href="login.html" class="btn-primary" style="padding: 8px 20px;">Login</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main style="margin-top: 0;"> <!-- Reset margin for split hero -->
+        <!-- Section 1: Hero (Split Screen) -->
+        <section class="split-hero">
+            <div class="container-fluid p-0">
+                <div class="row g-0">
+                    <div class="col-lg-6 position-relative z-1">
+                        <div class="content-box">
+                            <div class="growing-plant mb-4 text-accent">
+                                <i class="fa-solid fa-leaf fa-3x" style="color: var(--accent-color);"></i>
+                            </div>
+                            <h1 class="display-3 fw-bold mb-4 hero-title">Cultivate the <span
+                                    class="modern-gradient-text">Extraordinary</span></h1>
+                            <p class="lead mb-5">Access our exclusive reserve of rare, culturally significant seed
+                                varieties that tell the story of our agricultural heritage.</p>
+                            <div class="d-flex align-items-center flex-wrap gap-3">
+                                <a href="gallery.html" class="btn-primary m-0">View Gallery</a>
+                                <a href="pricing.html" class="btn-outline m-0">Join the Vault</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 d-none d-lg-block">
+                        <div class="bg-image skeleton-wrapper skeleton"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 2: Rare Seed Varieties (Zoom Reveal) -->
+        <section class="section-padding" style="background-color: var(--bg-secondary);">
+            <div class="container">
+                <div class="text-center mb-5 reveal" data-anim="zoom">
+                    <h2 class="display-5">Exclusive Rare Varieties</h2>
+                    <p class="lead">Seeds you won't find in any standard catalog.</p>
+                </div>
+                <div class="row g-4 justify-content-center">
+                    <div class="col-lg-4 reveal" data-anim="zoom">
+                        <div class="position-relative overflow-hidden rounded-4 shadow-lg group">
+                            <img src="https://images.pexels.com/photos/13422455/pexels-photo-13422455.jpeg"
+                                class="img-fluid w-100 skeleton-wrapper skeleton" alt="Glass Gem Corn"
+                                style="height: 350px; object-fit: cover; transition: transform 0.5s ease;">
+                            <div class="position-absolute bottom-0 start-0 w-100 p-4 bg-dark bg-opacity-75 text-white"
+                                style="backdrop-filter: blur(5px);">
+                                <h3 class="text-white">Glass Gem Corn</h3>
+                                <p class="mb-0 text-white" style="color: #fff !important;">A stunning, translucent
+                                    rainbow-colored heirloom corn.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 reveal" data-anim="zoom" style="transition-delay: 0.2s;">
+                        <div class="position-relative overflow-hidden rounded-4 shadow-lg group">
+                            <img src="https://images.pexels.com/photos/27549887/pexels-photo-27549887.jpeg"
+                                class="img-fluid w-100 skeleton-wrapper skeleton" alt="Purple Dragon Carrot"
+                                style="height: 350px; object-fit: cover; transition: transform 0.5s ease;">
+                            <div class="position-absolute bottom-0 start-0 w-100 p-4 bg-dark bg-opacity-75 text-white"
+                                style="backdrop-filter: blur(5px);">
+                                <h3 class="text-white">Purple Dragon Carrot</h3>
+                                <p class="mb-0 text-white" style="color: #fff !important;">Deep purple exterior with a
+                                    brilliant orange core.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 reveal" data-anim="zoom" style="transition-delay: 0.4s;">
+                        <div class="position-relative overflow-hidden rounded-4 shadow-lg group">
+                            <img src="https://images.pexels.com/photos/533280/pexels-photo-533280.jpeg"
+                                class="img-fluid w-100 skeleton-wrapper skeleton" alt="Cherokee Purple Tomato"
+                                style="height: 350px; object-fit: cover; transition: transform 0.5s ease;">
+                            <div class="position-absolute bottom-0 start-0 w-100 p-4 bg-dark bg-opacity-75 text-white"
+                                style="backdrop-filter: blur(5px);">
+                                <h3 class="text-white">Cherokee Purple Tomato</h3>
+                                <p class="mb-0 text-white" style="color: #fff !important;">A pre-1890 heirloom known for
+                                    its rich, complex flavor.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 3: Seed Preservation Process (Step Animation) -->
+        <section class="section-padding" style="background-color: var(--bg-primary);">
+            <div class="container">
+                <div class="text-center mb-5 reveal" data-anim="fade-up">
+                    <span class="text-gold fw-bold">Our Methodology</span>
+                    <h2 class="display-5 mt-2">The Preservation Process</h2>
+                </div>
+                <div class="row g-4">
+                    <div class="col-md-4 reveal" data-anim="fade-up">
+                        <div class="card h-100 border-0 shadow-sm p-4 rounded-4 text-center hover-lift position-relative"
+                            style="background-color: var(--surface); z-index: 2;">
+                            <div class="step-number mx-auto mb-4 shadow-sm">1</div>
+                            <h4>Ethical Sourcing</h4>
+                            <p class="mb-0">We collaborate with indigenous farmers and heritage growers to source
+                                authentic seeds.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 reveal" data-anim="fade-up" style="transition-delay: 0.2s;">
+                        <div class="card h-100 border-0 shadow-sm p-4 rounded-4 text-center hover-lift position-relative"
+                            style="background-color: var(--surface); z-index: 2;">
+                            <div class="step-number mx-auto mb-4 shadow-sm">2</div>
+                            <h4>Isolated Growing</h4>
+                            <p class="mb-0">Varieties are grown in strict isolation to prevent cross-pollination and
+                                maintain purity.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 reveal" data-anim="fade-up" style="transition-delay: 0.4s;">
+                        <div class="card h-100 border-0 shadow-sm p-4 rounded-4 text-center hover-lift position-relative"
+                            style="background-color: var(--surface); z-index: 2;">
+                            <div class="step-number mx-auto mb-4 shadow-sm">3</div>
+                            <h4>Climate Storage</h4>
+                            <p class="mb-0">Seeds are dried and stored in our climate-controlled vault to ensure maximum
+                                viability.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 4: Seasonal Planting Guides (Sliding Cards) -->
+        <section class="section-padding overflow-hidden" style="background-color: var(--bg-accent);">
+            <div class="container">
+                <div class="row align-items-center mb-5">
+                    <div class="col-lg-6 reveal" data-anim="slide-left">
+                        <h2 class="display-5">Curated Planting Guides</h2>
+                        <p class="lead">Step-by-step instructions for every season.</p>
+                    </div>
+                    <div class="col-lg-6 text-lg-end reveal" data-anim="slide-right">
+                        <a href="blog.html" class="btn-outline">View All Guides</a>
+                    </div>
+                </div>
+                <div class="row g-4 pb-4">
+                    <div class="col-md-6 col-lg-4">
+                        <div class="card border-0 shadow-sm sliding-card"
+                            style="border-radius: 15px;">
+                            <img src="https://images.unsplash.com/photo-1591857177580-dc82b9ac4e1e?q=80&w=600&auto=format&fit=crop"
+                                class="card-img-top skeleton-wrapper skeleton" alt="Spring Planning"
+                                style="height: 200px; object-fit: cover;">
+                            <div class="card-body p-4 ">
+                                <h5>Spring Preparation</h5>
+                                <p>Essential steps to wake up your garden soil.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="card border-0 shadow-sm sliding-card"
+                            style="border-radius: 15px; transition-delay: 0.2s;">
+                            <img src="https://images.unsplash.com/photo-1523348837708-15d4a09cfac2?q=80&w=600&auto=format&fit=crop"
+                                class="card-img-top skeleton-wrapper skeleton" alt="Summer Care"
+                                style="height: 200px; object-fit: cover;">
+                            <div class="card-body p-4 ">
+                                <h5>Summer Maintenance</h5>
+                                <p>Watering strategies and natural pest control.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="card border-0 shadow-sm sliding-card"
+                            style="border-radius: 15px; transition-delay: 0.4s;">
+                            <img src="https://images.pexels.com/photos/34842211/pexels-photo-34842211.jpeg"
+                                class="card-img-top skeleton-wrapper skeleton" alt="Autumn Seed Saving"
+                                style="height: 200px; object-fit: cover;">
+                            <div class="card-body p-4 ">
+                                <h5>Autumn Harvesting</h5>
+                                <p>How to identify mature seeds for saving.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- New Section: Sustainable Practices (Image with Animations) -->
+        <section class="section-padding" style="background-color: var(--bg-secondary); overflow: hidden;">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-6 mb-5 mb-lg-0 reveal" data-anim="slide-right">
+                        <div class="position-relative p-3">
+                            <!-- Background glowing blob animation -->
+                            <div class="position-absolute w-100 h-100 rounded-circle" style="background: var(--gold-accent); top: 0; left: 0; opacity: 0.2; filter: blur(50px); animation: pulse 4s infinite alternate;"></div>
+                            
+                            <img src="https://images.pexels.com/photos/2165688/pexels-photo-2165688.jpeg" class="img-fluid rounded-4 shadow-lg position-relative skeleton-wrapper skeleton" style="z-index: 2; transform: translateY(0); animation: float 5s ease-in-out infinite;" alt="Sustainable Farming">
+                            
+                            <!-- Floating badge animation -->
+                            <div class="position-absolute bg-white p-3 rounded-4 shadow-lg d-flex align-items-center gap-3" style="bottom: 10%; right: -5%; z-index: 3; animation: float 6s ease-in-out infinite 1s;">
+                                <i class="fa-solid fa-leaf text-success fs-2"></i>
+                                <div>
+                                    <h5 class="mb-0 text-dark">100% Organic</h5>
+                                    <small class="text-muted">Certified Practices</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 ps-lg-5 reveal" data-anim="slide-left">
+                        <span class="text-gold fw-bold text-uppercase tracking-wider">Our Promise</span>
+                        <h2 class="display-5 mt-2 mb-4">Nurturing the Earth for Future Generations</h2>
+                        <p class="lead mb-4">We believe that true seed preservation goes hand-in-hand with sustainable agriculture. Our methods ensure that the soil remains rich and vibrant.</p>
+                        <ul class="list-unstyled d-flex flex-column gap-3 mb-5">
+                            <li class="d-flex align-items-center gap-3">
+                                <div class="icon-box bg-success bg-opacity-10 text-success rounded-circle p-2 d-flex align-items-center justify-content-center" style="width: 40px; height: 40px;">
+                                    <i class="fa-solid fa-check"></i>
+                                </div>
+                                <span class="fw-medium">Zero synthetic pesticides or fertilizers</span>
+                            </li>
+                            <li class="d-flex align-items-center gap-3">
+                                <div class="icon-box bg-success bg-opacity-10 text-success rounded-circle p-2 d-flex align-items-center justify-content-center" style="width: 40px; height: 40px;">
+                                    <i class="fa-solid fa-check"></i>
+                                </div>
+                                <span class="fw-medium">Regenerative soil management</span>
+                            </li>
+                            <li class="d-flex align-items-center gap-3">
+                                <div class="icon-box bg-success bg-opacity-10 text-success rounded-circle p-2 d-flex align-items-center justify-content-center" style="width: 40px; height: 40px;">
+                                    <i class="fa-solid fa-check"></i>
+                                </div>
+                                <span class="fw-medium">Water conservation techniques</span>
+                            </li>
+                        </ul>
+                        <a href="about.html" class="btn-primary">Learn More</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 5: Biodiversity Statistics (Counter Animation) -->
+        <section class="section-padding"
+            style="background-image: url('https://images.unsplash.com/photo-1416879598553-300e84c9b917?q=80&w=1920&auto=format&fit=crop'); background-attachment: fixed; background-size: cover; position: relative;">
+            <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(26, 44, 31, 0.85);">
+            </div>
+            <div class="container position-relative z-2">
+                <div class="row g-4 text-center">
+                    <div class="col-md-3 col-6 reveal" data-anim="zoom">
+                        <div class="counter-box bg-white shadow-lg border-0 rounded-4" style="padding: 40px 20px;">
+                            <div class="counter-num text-gold" data-target="1500">0</div>
+                            <h5 class="mt-2 text-dark">Varieties Preserved</h5>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-6 reveal" data-anim="zoom" style="transition-delay: 0.1s;">
+                        <div class="counter-box bg-white shadow-lg border-0 rounded-4" style="padding: 40px 20px;">
+                            <div class="counter-num text-gold" data-target="50">0</div>
+                            <h5 class="mt-2 text-dark">Years of History</h5>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-6 reveal" data-anim="zoom" style="transition-delay: 0.2s;">
+                        <div class="counter-box bg-white shadow-lg border-0 rounded-4" style="padding: 40px 20px;">
+                            <div class="counter-num text-gold" data-target="10">0</div>
+                            <h5 class="mt-2 text-dark">K+ Active Growers</h5>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-6 reveal" data-anim="zoom" style="transition-delay: 0.3s;">
+                        <div class="counter-box bg-white shadow-lg border-0 rounded-4" style="padding: 40px 20px;">
+                            <div class="counter-num text-gold" data-target="100">0</div>
+                            <h5 class="mt-2 text-dark">% Non-GMO</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 6: Community Garden Movement (Gradient Glow) -->
+        <section class="section-padding" style="background-color: var(--bg-primary);">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-10">
+                        <div class="gradient-glow reveal" data-anim="fade-up">
+                            <div class="gradient-glow-inner text-center">
+                                <i class="fa-solid fa-users fs-1 text-accent mb-3"></i>
+                                <h2 class="display-5 mb-4">Join the Community Garden Movement</h2>
+                                <p class="lead mb-5">We offer special discounts and bulk pricing for community gardens
+                                    and educational institutions dedicated to food sovereignty.</p>
+                                <a href="contact.html" class="btn-primary btn-lg">Apply for Community Support</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+
+    <div id="global-footer"></div>
+    <script src="assets/js/load-footer.js"></script>
+
+    <!-- Bootstrap 5 JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="assets/js/script.js"></script>
+    <script>
+        // Counter Animation Logic
+        const counters = document.querySelectorAll('.counter-num');
+        const speed = 200;
+
+        const animateCounters = () => {
+            counters.forEach(counter => {
+                const updateCount = () => {
+                    const target = +counter.getAttribute('data-target');
+                    const count = +counter.innerText;
+                    const inc = target / speed;
+
+                    if (count < target) {
+                        counter.innerText = Math.ceil(count + inc);
+                        setTimeout(updateCount, 15);
+                    } else {
+                        counter.innerText = target + (target > 999 ? '+' : target === 10 ? 'k+' : '%');
+                    }
+                };
+                updateCount();
+            });
+        };
+
+        const counterObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    animateCounters();
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.5 });
+
+        counters.forEach(counter => {
+            counterObserver.observe(counter);
+        });
+
+        // Sliding cards animation
+        document.addEventListener('DOMContentLoaded', () => {
+            const slidingCards = document.querySelectorAll('.sliding-card');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.1 });
+            slidingCards.forEach(card => observer.observe(card));
+        });
+    </script>
+</body>
+
+</html>
+
