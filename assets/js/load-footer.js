@@ -35,7 +35,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     <p>Subscribe to our newsletter for seasonal planting tips and seed saving guides.</p>
                     <form class="d-flex mt-4">
                         <input type="email" class="form-control me-2 py-2" placeholder="Email Address" required style="max-width: 300px; border-radius: 8px;">
-                        <button class="btn-primary" type="submit" style="padding: 10px 25px;">Subscribe</button>
+                        <button class="btn-primary flex-shrink-0" type="submit" style="padding: 10px 25px;">Subscribe</button>
                     </form>
                 </div>
             </div>

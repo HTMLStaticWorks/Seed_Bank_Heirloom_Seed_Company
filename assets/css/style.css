@@ -156,6 +156,8 @@ p, .lead {
   position: relative;
   overflow: hidden;
   z-index: 1;
+  white-space: nowrap;
+  flex-shrink: 0;
 }
 
 .btn-primary::before {
@@ -183,6 +185,8 @@ p, .lead {
   font-weight: 500;
   transition: var(--transition);
   display: inline-block;
+  white-space: nowrap;
+  flex-shrink: 0;
 }
 
 .btn-outline:hover {
@@ -318,7 +322,7 @@ p, .lead {
     width: 100%;
     height: calc(100vh - 76px);
     background: var(--bg-primary);
-    padding: 30px;
+    padding: 20px 15px;
     transform: translateX(-100%);
     transition: var(--transition);
     overflow-y: auto;
@@ -335,12 +339,26 @@ p, .lead {
   .navbar-nav {
     flex-direction: column;
     align-items: center;
-    gap: 20px;
-    margin-bottom: 30px;
+    gap: 10px;
+    margin-bottom: 20px;
   }
   
   .nav-link {
-    font-size: 1.5rem;
+    font-size: 1.25rem;
+    padding: 5px 0 !important;
+  }
+
+  .header-controls {
+    flex-direction: row !important;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .header-controls .btn-primary {
+    width: auto;
+    min-width: 200px;
+    margin-top: 5px;
+    text-align: center;
   }
 }
 
@@ -628,14 +646,17 @@ main {
   }
   .navbar-collapse {
     background: var(--navbar-bg);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
     padding: 20px;
-    border-radius: 10px;
+    border-radius: 0;
     box-shadow: var(--shadow);
-    margin-top: 15px;
+    margin-top: 0;
     position: absolute;
     top: 100%;
-    left: 15px;
-    right: 15px;
+    left: 0;
+    right: 0;
+    width: 100%;
     z-index: 1000;
   }
   .nav-item {
@@ -769,11 +790,11 @@ h3, .h3 { font-size: clamp(1.75rem, 3vw, 2.5rem) !important; }
 
 /* Main Hero Headings (Home 1 & Home 2) */
 .hero-title {
-    font-size: clamp(3.5rem, 7vw, 6rem) !important;
+    font-size: clamp(2.5rem, 10vw, 6rem) !important;
     font-weight: 580 !important;
     line-height: 1.05 !important;
     letter-spacing: -0.03em !important;
-    max-width: 14ch !important;
+    max-width: 16ch !important;
 }
 
 /* Inner Page Hero Headings (About, Seeds, Gallery, etc.) */
@@ -810,4 +831,23 @@ h3, .h3 { font-size: clamp(1.75rem, 3vw, 2.5rem) !important; }
     .masonry-overlay {
         opacity: 1 !important;
     }
+}
+
+/* Accordion Arrow Fix for Dark Theme & RTL */
+[data-theme="dark"] .accordion-button::after {
+    filter: invert(1) grayscale(100%) brightness(200%);
+}
+
+[dir="rtl"] .accordion-button::after {
+    margin-left: 0 !important;
+    margin-right: auto !important;
+}
+
+/* Custom Gold Button Fix */
+.btn-primary.btn-gold {
+    background-color: var(--gold-accent) !important;
+    color: #000 !important;
+}
+.btn-primary.btn-gold:hover {
+    color: #ffffff !important;
 }

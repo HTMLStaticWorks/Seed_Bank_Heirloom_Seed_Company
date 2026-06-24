@@ -48,6 +48,11 @@
             border: 1px solid var(--border-color);
             max-height: 95vh;
             overflow-y: auto;
+            -ms-overflow-style: none;  /* IE and Edge */
+            scrollbar-width: none;  /* Firefox */
+        }
+        .auth-card::-webkit-scrollbar {
+            display: none;
         }
         
         .form-control {
@@ -91,11 +96,15 @@
             background: var(--bg-secondary);
             color: var(--text-primary);
         }
-            @media (max-width: 576px) {
+        @media (max-width: 576px) {
             .auth-card {
-                padding: 30px 20px !important;
-                margin: 20px !important;
+                padding: 40px 20px 30px !important;
+                margin: 70px 20px 20px !important;
                 width: calc(100% - 40px) !important;
+            }
+            .auth-controls {
+                top: 15px;
+                right: 20px;
             }
         }
     </style>
