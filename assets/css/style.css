@@ -727,7 +727,6 @@ h1, h2, h3, h4, h5, h6, .display-1, .display-2, .display-3, .display-4, .display
 .hero-buttons, .hero-section .d-flex {
   flex-wrap: wrap !important;
   gap: 12px !important;
-  justify-content: center !important;
 }
 
 /* Card Containment */
@@ -737,9 +736,10 @@ h1, h2, h3, h4, h5, h6, .display-1, .display-2, .display-3, .display-4, .display
   overflow: hidden !important;
 }
 
-/* Form Overflows */
-input, textarea, select, button {
+/* Form & Button Overflows */
+input, textarea, select, button, .btn {
   max-width: 100% !important;
+  white-space: normal !important;
 }
 
 /* Mobile Menu Containment */
@@ -784,25 +784,25 @@ h6, .display-6 { font-size: 1.25rem !important; }
 /* ========================================= */
 
 /* Global Typography System (Responsive) */
-h1, .h1 { font-size: clamp(2.8rem, 5vw, 6rem) !important; }
-h2, .h2 { font-size: clamp(2rem, 4vw, 4rem) !important; }
-h3, .h3 { font-size: clamp(1.75rem, 3vw, 2.5rem) !important; }
+h1, .h1 { font-size: clamp(2rem, 4vw, 3.5rem) !important; }
+h2, .h2 { font-size: clamp(1.75rem, 3vw, 2.5rem) !important; }
+h3, .h3 { font-size: clamp(1.5rem, 2.5vw, 2rem) !important; }
 
 /* Main Hero Headings (Home 1 & Home 2) */
 .hero-title {
-    font-size: clamp(2.5rem, 10vw, 6rem) !important;
-    font-weight: 580 !important;
-    line-height: 1.05 !important;
-    letter-spacing: -0.03em !important;
-    max-width: 16ch !important;
+    font-size: clamp(2.2rem, 5vw, 3.5rem) !important;
+    font-weight: 600 !important;
+    line-height: 1.15 !important;
+    letter-spacing: -0.02em !important;
+    max-width: 22ch !important;
 }
 
 /* Inner Page Hero Headings (About, Seeds, Gallery, etc.) */
 .page-hero h1, .page-hero .display-3 {
-    font-size: clamp(3rem, 5vw, 5rem) !important;
-    font-weight: 570 !important;
-    line-height: 1.1 !important;
-    letter-spacing: -0.02em !important;
+    font-size: clamp(2rem, 4vw, 3.5rem) !important;
+    font-weight: 600 !important;
+    line-height: 1.15 !important;
+    letter-spacing: -0.01em !important;
     text-align: center;
     width: 100%;
 }

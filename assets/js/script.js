@@ -3,8 +3,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const faviconLink = document.createElement('link');
     faviconLink.rel = 'icon';
     faviconLink.type = 'image/svg+xml';
-    // Seedling SVG path filled with Deep Forest Green (#2e5939)
-    const svgData = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="#2e5939" d="M512 32c0 113.6-84.6 207.5-194.2 222c-7.1-53.4-30.6-101.6-65.3-139.3C290.8 46.3 364 0 448 0l32 0c17.7 0 32 14.3 32 32zM0 96C0 78.3 14.3 64 32 64l32 0c123.7 0 224 100.3 224 224l0 32 0 160c0 17.7-14.3 32-32 32s-32-14.3-32-32l0-160C100.3 320 0 219.7 0 96z"/></svg>`;
+    // Seedling SVG
+    const svgData = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40" fill="none"><rect width="40" height="40" rx="20" fill="#2e5939"/><path d="M20 28V16" stroke="white" stroke-width="2.5" stroke-linecap="round"/><path d="M20 22C16.5 22 13 18.5 13 14C16.5 14 20 17.5 20 22Z" fill="white"/><path d="M20 17C23.5 17 27 13.5 27 9C23.5 9 20 12.5 20 17Z" fill="white"/></svg>`;
     faviconLink.href = 'data:image/svg+xml;base64,' + btoa(svgData);
     document.head.appendChild(faviconLink);
     
@@ -137,8 +137,13 @@ class BrandLogo extends HTMLElement {
 
         this.innerHTML = `
             <a class="${wrapperClass}" href="index.html" style="gap: 12px; height: 50px; ${customStyles}">
-                <i class="fa-solid fa-seedling" style="color: var(--accent-color); font-size: 2rem; line-height: 1;"></i>
-                <span style="font-weight: 700; color: var(--text-primary) !important; font-size: 2rem; line-height: 1; margin-top: 5px;">Seed Vault</span>
+                <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" style="flex-shrink: 0;">
+                    <rect width="40" height="40" rx="20" fill="var(--accent-color)"/>
+                    <path d="M20 28V16" stroke="white" stroke-width="2.5" stroke-linecap="round"/>
+                    <path d="M20 22C16.5 22 13 18.5 13 14C16.5 14 20 17.5 20 22Z" fill="white"/>
+                    <path d="M20 17C23.5 17 27 13.5 27 9C23.5 9 20 12.5 20 17Z" fill="white"/>
+                </svg>
+                <span style="font-weight: 800; color: var(--text-primary) !important; font-size: 1.75rem; letter-spacing: -0.5px; line-height: 1; font-family: 'Inter', sans-serif;">Seed Vault</span>
             </a>
         `;
     }

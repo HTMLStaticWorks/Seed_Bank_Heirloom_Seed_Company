@@ -33,9 +33,9 @@ document.addEventListener('DOMContentLoaded', function() {
                 <div class="col-lg-5 col-md-12 footer-widget">
                     <h4 class="mb-4" style="color: var(--heading-color);">Newsletter</h4>
                     <p>Subscribe to our newsletter for seasonal planting tips and seed saving guides.</p>
-                    <form class="d-flex mt-4">
-                        <input type="email" class="form-control me-2 py-2" placeholder="Email Address" required style="max-width: 300px; border-radius: 8px;">
-                        <button class="btn-primary flex-shrink-0" type="submit" style="padding: 10px 25px;">Subscribe</button>
+                    <form class="d-flex flex-column flex-sm-row gap-2 mt-4" style="max-width: 400px;">
+                        <input type="email" class="form-control py-2" placeholder="Email Address" required style="border-radius: 8px;">
+                        <button class="btn-primary flex-shrink-0" type="submit" style="padding: 10px 25px; border-radius: 8px;">Subscribe</button>
                     </form>
                 </div>
             </div>

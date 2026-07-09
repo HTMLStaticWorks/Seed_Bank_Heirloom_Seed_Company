@@ -21,7 +21,7 @@
         }
 
         .split-hero .bg-image {
-            background-image: url('https://images.unsplash.com/photo-1595806659756-11f26bdcc841?q=80&w=1920&auto=format&fit=crop');
+            background-image: url('https://images.pexels.com/photos/2862150/pexels-photo-2862150.jpeg');
             background-size: cover;
             background-position: center;
             height: 100vh;
@@ -29,6 +29,8 @@
             top: 0;
             right: 0;
             width: 50%;
+            clip-path: polygon(15% 0, 100% 0, 100% 100%, 0 100%);
+            box-shadow: -20px 0 50px rgba(0, 0, 0, 0.2);
         }
 
         .split-hero .content-box {
@@ -40,10 +42,14 @@
         }
 
         @media (max-width: 991px) {
+            .split-hero {
+                flex-direction: column-reverse;
+            }
             .split-hero .bg-image {
                 position: relative;
                 width: 100%;
                 height: 50vh;
+                clip-path: none;
             }
 
             .split-hero .content-box {
@@ -80,19 +86,6 @@
             background-clip: text;
             display: inline-block;
             filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.1));
-        }
-
-        .split-hero .bg-image {
-            background-image: url('https://images.pexels.com/photos/2862150/pexels-photo-2862150.jpeg');
-            background-size: cover;
-            background-position: center;
-            height: 100vh;
-            position: absolute;
-            top: 0;
-            right: 0;
-            width: 50%;
-            clip-path: polygon(15% 0, 100% 0, 100% 100%, 0 100%);
-            box-shadow: -20px 0 50px rgba(0, 0, 0, 0.2);
         }
 
         [dir="rtl"] .split-hero .bg-image {
@@ -189,7 +182,7 @@
         .gradient-glow-inner {
             background: var(--bg-primary);
             border-radius: 18px;
-            padding: 50px;
+            padding: clamp(20px, 6vw, 50px);
             height: 100%;
         }
 
@@ -290,7 +283,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-6 d-none d-lg-block">
+                    <div class="col-lg-6">
                         <div class="bg-image skeleton-wrapper skeleton"></div>
                     </div>
                 </div>
@@ -452,7 +445,7 @@
                             <img src="https://images.pexels.com/photos/2165688/pexels-photo-2165688.jpeg" class="img-fluid rounded-4 shadow-lg position-relative skeleton-wrapper skeleton" style="z-index: 2; transform: translateY(0); animation: float 5s ease-in-out infinite;" alt="Sustainable Farming">
                             
                             <!-- Floating badge animation -->
-                            <div class="position-absolute bg-white p-3 rounded-4 shadow-lg d-flex align-items-center gap-3" style="bottom: 10%; right: -5%; z-index: 3; animation: float 6s ease-in-out infinite 1s;">
+                            <div class="position-absolute bg-white p-3 rounded-4 shadow-lg d-flex align-items-center gap-3" style="bottom: 10%; right: 20px; z-index: 3; animation: float 6s ease-in-out infinite 1s;">
                                 <i class="fa-solid fa-leaf text-success fs-2"></i>
                                 <div>
                                     <h5 class="mb-0 text-dark">100% Organic</h5>
