@@ -851,3 +851,14 @@ h3, .h3 { font-size: clamp(1.5rem, 2.5vw, 2rem) !important; }
 .btn-primary.btn-gold:hover {
     color: #ffffff !important;
 }
+
+/* Mobile Button Wrap Fix */
+@media (max-width: 575px) {
+    .btn-primary, .btn-outline {
+        white-space: normal !important;
+        text-align: center !important;
+        word-break: break-word;
+        height: auto;
+        line-height: 1.4;
+    }
+}
